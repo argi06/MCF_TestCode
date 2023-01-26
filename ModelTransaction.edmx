@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Transaction_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ms_storage_location1">
+          <Key>
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="location_id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="location_name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ms_storage_location2">
+          <Key>
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="location_id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="location_name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ms_user">
+          <Key>
+            <PropertyRef Name="user_name" />
+          </Key>
+          <Property Name="user_name" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="10" />
+          <Property Name="user_type" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tr_bpkb1">
+          <Key>
+            <PropertyRef Name="agreement_number" />
+          </Key>
+          <Property Name="agreement_number" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="bpkb_no" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="branch_id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="bpkb_date" Type="datetime" Nullable="false" />
+          <Property Name="faktur_no" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="faktur_date" Type="datetime" Nullable="false" />
+          <Property Name="location_id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="police_no" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="bpkb_date_in" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tr_bpkb2">
+          <Key>
+            <PropertyRef Name="agreement_number" />
+          </Key>
+          <Property Name="agreement_number" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="bpkb_no" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="branch_id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="bpkb_date" Type="datetime" Nullable="false" />
+          <Property Name="faktur_no" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="faktur_date" Type="datetime" Nullable="false" />
+          <Property Name="location_id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="police_no" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="bpkb_date_in" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Transaction_DBModelStoreContainer">
+          <EntitySet Name="ms_storage_location1" EntityType="Self.ms_storage_location1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ms_storage_location2" EntityType="Self.ms_storage_location2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ms_user" EntityType="Self.ms_user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tr_bpkb1" EntityType="Self.tr_bpkb1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tr_bpkb2" EntityType="Self.tr_bpkb2" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Transaction_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ms_storage_location1">
+          <Key>
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="location_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="location_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ms_storage_location2">
+          <Key>
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="location_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="location_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ms_user">
+          <Key>
+            <PropertyRef Name="user_name" />
+          </Key>
+          <Property Name="user_name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="user_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tr_bpkb1">
+          <Key>
+            <PropertyRef Name="agreement_number" />
+          </Key>
+          <Property Name="agreement_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bpkb_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="branch_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bpkb_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="faktur_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="faktur_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="location_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="police_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bpkb_date_in" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tr_bpkb2">
+          <Key>
+            <PropertyRef Name="agreement_number" />
+          </Key>
+          <Property Name="agreement_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bpkb_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="branch_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bpkb_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="faktur_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="faktur_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="location_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="police_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bpkb_date_in" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="Transaction_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ms_storage_location1" EntityType="Self.ms_storage_location1" />
+          <EntitySet Name="ms_storage_location2" EntityType="Self.ms_storage_location2" />
+          <EntitySet Name="ms_user" EntityType="Self.ms_user" />
+          <EntitySet Name="tr_bpkb1" EntityType="Self.tr_bpkb1" />
+          <EntitySet Name="tr_bpkb2" EntityType="Self.tr_bpkb2" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Transaction_DBModelStoreContainer" CdmEntityContainer="Transaction_DBEntities">
+          <EntitySetMapping Name="ms_storage_location1">
+            <EntityTypeMapping TypeName="Transaction_DBModel.ms_storage_location1">
+              <MappingFragment StoreEntitySet="ms_storage_location1">
+                <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="location_name" ColumnName="location_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ms_storage_location2">
+            <EntityTypeMapping TypeName="Transaction_DBModel.ms_storage_location2">
+              <MappingFragment StoreEntitySet="ms_storage_location2">
+                <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="location_name" ColumnName="location_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ms_user">
+            <EntityTypeMapping TypeName="Transaction_DBModel.ms_user">
+              <MappingFragment StoreEntitySet="ms_user">
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="user_type" ColumnName="user_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tr_bpkb1">
+            <EntityTypeMapping TypeName="Transaction_DBModel.tr_bpkb1">
+              <MappingFragment StoreEntitySet="tr_bpkb1">
+                <ScalarProperty Name="agreement_number" ColumnName="agreement_number" />
+                <ScalarProperty Name="bpkb_no" ColumnName="bpkb_no" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="bpkb_date" ColumnName="bpkb_date" />
+                <ScalarProperty Name="faktur_no" ColumnName="faktur_no" />
+                <ScalarProperty Name="faktur_date" ColumnName="faktur_date" />
+                <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="police_no" ColumnName="police_no" />
+                <ScalarProperty Name="bpkb_date_in" ColumnName="bpkb_date_in" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tr_bpkb2">
+            <EntityTypeMapping TypeName="Transaction_DBModel.tr_bpkb2">
+              <MappingFragment StoreEntitySet="tr_bpkb2">
+                <ScalarProperty Name="agreement_number" ColumnName="agreement_number" />
+                <ScalarProperty Name="bpkb_no" ColumnName="bpkb_no" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="bpkb_date" ColumnName="bpkb_date" />
+                <ScalarProperty Name="faktur_no" ColumnName="faktur_no" />
+                <ScalarProperty Name="faktur_date" ColumnName="faktur_date" />
+                <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="police_no" ColumnName="police_no" />
+                <ScalarProperty Name="bpkb_date_in" ColumnName="bpkb_date_in" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,19 @@
+﻿@if (Session["user_name"] == null)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Login", "Login", "Account", null, null)
+        </li>
+    </ul>
+}
+else
+{
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        @Html.ActionLink("Hi " + Session["user_name"], "Index", "Home", null, null)
+    </li>
+    <li>
+        @Html.ActionLink("Logout", "Logout", "Account", null, null)
+    </li>
+</ul>
+}

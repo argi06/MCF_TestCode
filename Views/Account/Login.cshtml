@@ -1,0 +1,54 @@
+﻿@model MCF_TestCode.Models.UserModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<fieldset>
+    <legend>
+        Login Form
+    </legend>
+    @using (Html.BeginForm("Login","Account",FormMethod.Post))
+     {
+<table>
+    <tr>
+        <td>
+            @Html.LabelFor(model => model.user_name)
+        </td>
+        <td>
+            @Html.TextBoxFor(model => model.user_name)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(model => model.password)
+        </td>
+        <td>
+            @Html.PasswordFor(model => model.password)
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <input type="submit" value="Login" />
+                    </td>
+                    <td>
+                        <input type="submit" value="Reset" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    @*<tr>
+        <td>
+            @Html.ValidationMessageFor("Error",null, new { @class = "text text-danger"});
+        </td>
+    </tr>*@
+</table>
+     }
+</fieldset>

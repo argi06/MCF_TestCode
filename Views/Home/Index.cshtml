@@ -1,0 +1,142 @@
+﻿@model MCF_TestCode.Models.Bpkb1Model
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<fieldset>
+    <legend>
+        Technical Test
+    </legend>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.agreement_number)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.agreement_number)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.bpkp_no)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.bpkp_no)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.branch_id)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.branch_id)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.bpkb_date)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.bpkb_date)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.faktur_no)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.faktur_no)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.faktur_date)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.faktur_date)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.location_id)
+                </td>
+                <td>
+                    @{
+                        List<SelectListItem> listItems = new List<SelectListItem>();
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "Bandung",
+                            Value = "100"
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "Jakarta",
+                            Value = "200"
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "TAngerang",
+                            Value = "300"
+                        });
+                    }
+                    @Html.DropDownListFor(model => model.location_id,listItems, "-Select Location-")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.police_no)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.police_no)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.bpkb_date_in)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.bpkb_date_in)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Save" />
+                            </td>
+                            <td>
+                                <input type="reset" value="Cancel" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    }
+</fieldset>
+
+<style type="text/css">
+    .ui-datepicker {
+        background: #333;
+        border: 1px solid #555;
+        color: #EEE;
+    }
+</style>
+@section scripts {
+
+    <script src="~/Scripts/jquery-ui-1.13.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#bpkb_date_in").datepicker();
+            $("#faktur_date").datepicker();
+            $("#bpkb_date").datepicker();
+        });
+    </script>
+
+}
